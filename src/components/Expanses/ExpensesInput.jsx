@@ -7,7 +7,7 @@ const ExpensesInput = () => {
     e.preventDefault();
   };
   return (
-    <div>
+    <div className="p-3">
       <form
         className="flex flex-col  justify-center p-4"
         onSubmit={handleSubmit}
@@ -16,7 +16,7 @@ const ExpensesInput = () => {
           <legend className="fieldset-legend">Enter your expances Type?</legend>
           <input
             type="text"
-            className="input"
+            className="input w-full"
             placeholder="Type here"
             value={billText}
             onChange={(e) => billTextSetter(e.target.value)}
@@ -26,13 +26,13 @@ const ExpensesInput = () => {
           <legend className="fieldset-legend">Expances Bill ?</legend>
           <input
             type="number"
-            className="input"
+            className="input w-full"
             placeholder="Type here"
             value={billAmount}
             onChange={(e) => billAmountSetter(e.target.value)}
           />
         </fieldset>
-        <button className="btn btn-active">Save</button>
+        <button className="btn btn-active mt-2">Save</button>
       </form>
     </div>
   );

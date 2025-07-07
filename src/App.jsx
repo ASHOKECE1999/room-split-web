@@ -5,22 +5,29 @@ import Body from "./components/Body";
 import Dashboard from "./components/Dashboard";
 import Profile from "./components/Profile";
 import ExpensesInput from "./components/Expanses/ExpensesInput";
+import { Provider } from "react-redux";
+import store from "./store/configureStore";
+import Login from "./components/Login";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Body />}>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/expenses" element={<ExpensesInput />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Body />}>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/expenses" element={<ExpensesInput />} />
+              <Route path="*" element={<NotFound />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </Provider>
     </>
   );
 }
