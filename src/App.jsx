@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import store from "./store/configureStore";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound/NotFound";
+import EditProfile from "./components/EditProfile/EditProfile";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -23,6 +24,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/expenses" element={<ExpensesInput />} />
+              <Route path="/editprofile" element={<EditProfile />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

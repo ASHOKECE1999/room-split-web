@@ -30,7 +30,7 @@ const Login = () => {
       //   console.log(data);
 
       dispatch(addUser(data.data.data));
-      navigate("/");
+      return navigate("/");
     } catch (error) {
       console.log(error);
       console.log(error.message);
@@ -51,37 +51,41 @@ const Login = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-5">
-      <form onSubmit={handleSubmit}>
-        <div className="card w-96 bg-base-100 card-md shadow-sm p-5">
-          <div className="card-body">
+    <div className="flex flex-col items-center p-4 sm:p-6 md:p-8 min-h-screen justify-center">
+      <form onSubmit={handleSubmit} className="w-full max-w-sm px-0 mb-40">
+        <div className="card bg-base-100 shadow-md p-4 sm:p-5">
+          <div className="card-body space-y-4">
             <fieldset className="fieldset">
-              <legend className="fieldset-legend">EmailID</legend>
+              <legend className="fieldset-legend text-sm sm:text-base">
+                Email ID
+              </legend>
               <input
                 type="text"
-                className="input"
-                placeholder="Enter EmailId"
+                className="input input-bordered w-full"
+                placeholder="Enter Email ID"
                 value={emailId}
                 onChange={(e) => emailSetter(e.target.value)}
               />
             </fieldset>
             <fieldset className="fieldset">
-              <legend className="fieldset-legend">EmailID</legend>
+              <legend className="fieldset-legend text-sm sm:text-base">
+                Password
+              </legend>
               <input
                 type="password"
-                className="input"
+                className="input input-bordered w-full"
                 placeholder="Enter your Password"
                 value={password}
                 onChange={(e) => passwordSetter(e.target.value)}
               />
             </fieldset>
-            <div className="justify-start card-actions">
-              <button className="btn btn-primary">Login</button>
+            <div className="card-actions justify-start">
+              <button className="btn btn-primary w-full">Login</button>
             </div>
           </div>
         </div>
       </form>
-      <div>{isError && <div>{errorMessage}</div>}</div>
+      {isError && <div className="text-red-500 mt-4">{errorMessage}</div>}
     </div>
   );
 };

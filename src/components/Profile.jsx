@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Profile = () => {
   const user = useSelector((state) => state.user);
@@ -24,7 +24,9 @@ const Profile = () => {
         </div>
       </div>
       <div className="card-actions">
-        <button className="btn btn-primary">Edit Profile </button>
+        <Link className="btn btn-primary" to="/editprofile">
+          Edit Profile
+        </Link>
       </div>
     </div>
   );
