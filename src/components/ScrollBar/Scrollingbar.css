@@ -9,9 +9,9 @@
 
 .animate-scroll {
   display: inline-block;
-  animation: scroll 25s linear infinite;
+  animation: scroll 30s linear infinite;
 }
 .animate-scroll2 {
   display: inline-block;
-  animation: scroll 30s linear infinite;
+  animation: scroll 10s linear infinite;
 }

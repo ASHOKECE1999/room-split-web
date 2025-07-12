@@ -27,6 +27,9 @@ const Profile = () => {
         <Link className="btn btn-primary" to="/editprofile">
           Edit Profile
         </Link>
+        <button className="btn btn-primary" to="/editprofile">
+          Change Password
+        </button>
       </div>
     </div>
   );

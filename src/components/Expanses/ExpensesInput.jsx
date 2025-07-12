@@ -1,11 +1,44 @@
 import React, { useState } from "react";
+import ExpansesTable from "./ExpansesTable";
+import axios from "axios";
+import { BASE_URL } from "../../constants/constant";
+import { useDispatch } from "react-redux";
+import { changeState } from "../../store/updated";
 
 const ExpensesInput = () => {
   const [billText, billTextSetter] = useState("");
+  const dispatch = useDispatch();
   const [billAmount, billAmountSetter] = useState("");
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      billText !== "" &&
+      billAmount !== "" &&
+      billText !== " " &&
+      billAmount !== " "
+    ) {
+      try {
+        const data = await axios.post(
+          BASE_URL + "/addexpense",
+          {
+            expanseType: billText,
+            expenseAmount: billAmount,
+          },
+          {
+            withCredentials: true,
+          }
+        );
+        dispatch(changeState());
+        console.log(data.data);
+        billAmountSetter("");
+        billTextSetter("");
+      } catch (error) {
+        console.log(error);
+      }
+    }
   };
+
   return (
     <div className="p-3">
       <form
@@ -32,8 +65,13 @@ const ExpensesInput = () => {
             onChange={(e) => billAmountSetter(e.target.value)}
           />
         </fieldset>
-        <button className="btn btn-active mt-2">Save</button>
+        <button className="btn btn-active mt-2" type="submit">
+          Save
+        </button>
       </form>
+      <div>
+        <ExpansesTable />
+      </div>
     </div>
   );
 };

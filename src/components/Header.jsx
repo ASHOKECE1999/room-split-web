@@ -66,6 +66,9 @@ const Header = () => {
                   <li>
                     <Link to="/expenses">Enter Expenses</Link>
                   </li>
+                  <li>
+                    <Link to="/waterschedule">WaterSchedule</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -85,7 +88,7 @@ const Header = () => {
                 <div className="w-10 rounded-full">
                   <img
                     alt="Tailwind CSS Navbar component"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
+                    src={user?.profileUrl}
                   />
                 </div>
               </div>
