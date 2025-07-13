@@ -52,7 +52,7 @@ const MonthWiseSummary = () => {
                   <th>S.No</th>
                   <th>Profile</th>
                   <th>Name</th>
-                  <th>Total Amoout</th>
+                  <th className="text-center">Total Amoout</th>
                 </tr>
               </thead>
               <tbody>
@@ -69,7 +69,7 @@ const MonthWiseSummary = () => {
                       {eachItem?.userData[0]?.fullName}
                     </th>
 
-                    <th className="text-green-500s">
+                    <th className="text-green-500s text-center">
                       {eachItem?.expenses || 0}
                     </th>
                   </tr>
