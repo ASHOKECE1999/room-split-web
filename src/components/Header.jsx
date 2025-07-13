@@ -61,6 +61,11 @@ const Header = () => {
                 ></label>
                 <ul className="menu bg-base-200 text-base-content min-h-[91%] w-40 p-4 pt-10 mt-16">
                   <li>
+                    <span className="text-green-700 font-bold">
+                      {user?.fullName}
+                    </span>
+                  </li>
+                  <li>
                     <Link to="/">Home</Link>
                   </li>
                   <li>

@@ -51,11 +51,11 @@ const ExpansesTable = () => {
     <div>
       <input
         type="month"
-        className="input ml-2"
+        className="input ml-3"
         onChange={getDateInput}
         value={filteredDate}
       />
-      <div className="text-left mt-2 ml-2 font-bold text-lg">
+      <div className="text-left mt-2 ml-4 font-bold text-lg">
         Total Expenses: ₹
         <span className="text-green-600 text-2xl ml-3 text-center">
           {totalAmount}
